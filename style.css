@@ -1,0 +1,113 @@
+body {
+    background-color: whitesmoke;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.button {
+    background-color: #2c3331;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+a {
+    color: red;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+body.dark-mode a {
+    color: orange;
+}
+
+#avaus {
+    width: 250px;
+    margin: auto;
+    text-align: center;
+}
+
+img.center {
+    width: 250px;
+    margin: auto;
+}
+
+#selostus {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+}
+
+.lista ul {
+    padding-right: 40px; 
+    padding-bottom: 40px;
+    color: white;
+    width: 200px;
+    font-size: 20px;
+}
+li {
+    padding-bottom: 10px;
+    position: relative;
+}
+li img {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translateY(-50%);
+    width: 250px;
+}
+li:hover img {
+    display: block;
+}
+
+
+
+
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+    }
+    body.dark-mode .modal-content {
+      background: black;
+      color: white;
+    }
+    .close {
+      float: right;
+      cursor: pointer;
+      font-size: 40px;
+    }
+    #openModal {
+        background-color: rgb(25, 66, 138);
+        color: white;
+        padding: 8px;
+        font-size: 20px;
+    }

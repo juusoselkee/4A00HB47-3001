@@ -1,66 +1,116 @@
 <!DOCTYPE html>
-<html lang= "en">
+<html lang= "fi">
 <head>
     <meta charset="UTF-8">
     <title>Barcelona sivu</title>
-    <style>
-    body {
-    background-color: rgb(199, 199, 199);
-    }
-    a {
-        color: red;
-        font-family: sans-serif;
-        font-size: 15px;
-    }
-    #otsikko1 {
-        color: blue;
-    }
-    #avaus {
-        width: 250px;
-        margin: auto;
-        text-align: center;
-    }
-    img.center {
-        width: 250px;
-        margin: auto;
-    }
-    #selostus {
-        width: 500px;
-        margin: auto;
-        text-align: center;
-        padding: 30px;
-    }
-    #lista {
-        width: 200px;
-        margin: auto;
-        background-color: rgb(144, 55, 228);
-        padding: 30px
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <label class="button">
+        Tumma tila
+        <input type="checkbox" id="darkModeToggle">
+    </label>
+
+
     <div id="avaus">
-        <h1 id="otsikko1">FC Barcelona</h1>
+        <h1>FC Barcelona</h1>
 
         <img class="center" src="FCB_logo.png" alt="FC Barcelona logo">
     </div>
+
 
     <div id="selostus">
         <p>FC Barcelona on yksi Espanjan suurimmista jalkapalloseuroista</p>
 
         <a href="https://www.fcbarcelona.com/en/" target="_blank">Kotisivut</a>
+        <br><br>
+        <button id="openModal">Historia</button>
     </div>
-    
-    <div id="lista">
-        <h2>Avain pelaajat</h2>
 
-        <ul>
-            <li>Yamal</li>
-            <li>Pedri</li>
-            <li>Raphinha</li>
-            <li>Lewandowski</li>
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <h2>Historia</h2>
+            <p>
+                FC Barcelona perustettiin vuonna 1899. Seura tunnetaan hyökkäävästä pelityylistä ja
+                vahvasta identiteetistään katalonialaisena seurana. Barcelonan motto on 
+                "Més que un club" eli "Enemmän kuin seura".
+            </p>
+        </div>
+    </div>
+
+    
+    <div class="lista">
+        <ul style="background-color: rgb(25, 66, 138);">
+            <h2 style="text-align: center;">Avain pelaajat (miehet)</h2>
+            <li>Yamal
+                <img src="10-Lamine.webp" alt="Yamal">
+            </li>
+            <li>Pedri
+                <img src="08-Pedri.webp" alt="Pedri">
+            </li>
+            <li>Raphinha
+                <img src="11-Raphinha.webp" alt="Raphinha">
+            </li>
+            <li>Araujo
+                <img src="04-Araujo.webp" alt="Araujo">
+            </li>
+        </ul>
+        <ul style="background-color: rgb(219, 0, 48);">
+            <h2 style="text-align: center;">Avain pelaajat (naiset)</h2>
+            <li>Putellas
+                <img src="11-Alexia.webp" alt="Putellas">
+            </li>
+            <li>Bonmati
+                <img src="14_Aitana.webp" alt="Bonmati">
+            </li>
+            <li>Pajor
+                <img src="17-Pajor.webp" alt="Pajor">
+            </li>
+            <li>Paredes
+                <img src="02-Paredes.webp" alt="Paredes">
+            </li>
+        </ul>
+        <ul style="background-color: rgb(25, 66, 138);">
+            <h2 style="text-align: center;">Suurimmat sponsorit</h2>
+            <li>Spotify</li>
+            <li>Nike</li>
+            <li>UNHCR</li>
+            <li>1XBET</li>
         </ul>
     </div>
+    
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', this.checked);
+        });
+    </script>
+
+    <script>
+    const modal = document.getElementById("historyModal");
+    const btn = document.getElementById("openModal");
+    const span = document.querySelector(".close");
+
+    // Näytä modal
+    btn.onclick = function() {
+      modal.style.display = "flex";
+    }
+
+    // Sulje modal painamalla ruksia
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Sulje modal jos klikkaa taustaa
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 </html>
